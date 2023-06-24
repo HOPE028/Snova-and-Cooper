@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import './App.css'
+import { useAuth } from './Contexts/AuthContext'
+import Gallery from './Components/Gallery'
+import Login from './Components/Login'
+import Upload from './Components/Upload'
+import ImageDetail from './Components/ImageDetail'
+import Navbar from './Components/Navbar'
 
 function App() {
+  const { currentUser } = useAuth()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='*' element={<Gallery />} />
+        <Route path='/image/:id' element={<ImageDetail />} />
+        <Route
+          path='/login'
+          element={currentUser ? <Navigate replace to='/' /> : <Login />}
+        />
+        <Route
+          path='/upload'
+          element={currentUser ? <Upload /> : <Navigate replace to='/' />}
+        />
+        <Route path='/navbar' element={<Navbar />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
