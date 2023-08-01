@@ -1,0 +1,21 @@
+.poemContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px; /* For smaller screens */
+  color: white;
+  text-align: center;
+  font-size: calc(10px + 2vmin); /* Responsive font size */
+  line-height: 1.5; /* Line spacing */
+  white-space: pre-line; /* Preserves line breaks */
+}
+
+.poemTitle {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 50px;
+}
+
+.poemBody {
+  margin-top: 20px; /* For spacing between title and body, adjust as needed */
+}

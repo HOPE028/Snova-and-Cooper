@@ -7,6 +7,7 @@ import Login from './Components/Login'
 import Upload from './Components/Upload'
 import ImageDetail from './Components/ImageDetail'
 import Navbar from './Components/Navbar'
+import Poem from './Components/Poem'
 
 function App() {
   const { currentUser } = useAuth()
@@ -23,6 +24,10 @@ function App() {
         <Route
           path='/upload'
           element={currentUser ? <Upload /> : <Navigate replace to='/' />}
+        />
+        <Route
+          path='/poem'
+          element={currentUser ? <Poem /> : <Navigate replace to='/' />}
         />
         <Route path='/navbar' element={<Navbar />} />
       </Routes>
