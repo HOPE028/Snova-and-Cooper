@@ -12,6 +12,7 @@ import {
 import Navbar from './Navbar'
 import { Link } from 'react-router-dom'
 import '../Styling/Gallery.css'
+import { useAuth } from '../Contexts/AuthContext'
 
 type ImageDoc = DocumentData & { id: string }
 
@@ -20,6 +21,7 @@ const Gallery: React.FC = () => {
   const [lastDoc, setLastDoc] = useState<DocumentData | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const { currentUser } = useAuth()
 
   const fetchImages = async () => {
     setLoading(true)
@@ -84,10 +86,7 @@ const Gallery: React.FC = () => {
           Show More
         </button>
       )}
-      <Link to={'/poem'}>
-        {' '}
-        <h3>Poem</h3>
-      </Link>
+      <Link to={'/poem'}>{currentUser && <h3>Poem</h3>}</Link>
     </div>
   )
 }
