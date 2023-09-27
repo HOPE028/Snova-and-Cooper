@@ -44,6 +44,16 @@ nav h1 a {
   margin: 0 1em;
 }
 
+/* New Styles */
+.nav-section:first-child {
+  flex-grow: 1;
+}
+
+.nav-section:not(:first-child) {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .menu-btn {
   position: absolute;
   top: 50%;
@@ -53,6 +63,10 @@ nav h1 a {
 }
 
 @media (max-width: 800px) {
+  .nav-section:not(:first-child) {
+    justify-content: center;
+  }
+
   .nav-links {
     flex-direction: column;
     position: absolute;

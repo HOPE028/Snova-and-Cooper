@@ -86,7 +86,6 @@ const Gallery: React.FC = () => {
           Show More
         </button>
       )}
-      <Link to={'/poem'}>{currentUser && <h3>Poem</h3>}</Link>
     </div>
   )
 }

@@ -19,3 +19,9 @@
 .poemBody {
   margin-top: 20px; /* For spacing between title and body, adjust as needed */
 }
+
+.poemContainer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}

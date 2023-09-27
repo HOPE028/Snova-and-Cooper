@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import '../Styling/Poem.css'
+import Navbar from '../Navbar'
+import '../../Styling/Poem.css'
 
 const Poem: React.FC = () => {
   const poemTitle = 'Love: noun - an intense feeling of deep affection'

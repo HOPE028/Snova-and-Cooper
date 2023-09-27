@@ -47,6 +47,15 @@ const Navbar: React.FC = () => {
             <div className='dummy-block'></div>
           )}
         </div>
+        <div className='nav-section'>
+          {currentUser ? (
+            <Link to='/Poems' onClick={closeMenu}>
+              Poems
+            </Link>
+          ) : (
+            <div className='dummy-block'></div>
+          )}
+        </div>
       </div>
     </nav>
   )

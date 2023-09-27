@@ -7,7 +7,7 @@ import Login from './Components/Login'
 import Upload from './Components/Upload'
 import ImageDetail from './Components/ImageDetail'
 import Navbar from './Components/Navbar'
-import Poem from './Components/Poem'
+import { Poems, Poem, Poem2 } from './Components/Poems/Poems-Index'
 
 function App() {
   const { currentUser } = useAuth()
@@ -26,9 +26,17 @@ function App() {
           element={currentUser ? <Upload /> : <Navigate replace to='/' />}
         />
         <Route
-          path='/poem'
+          path='/poems'
+          element={currentUser ? <Poems /> : <Navigate replace to='/' />}
+        />
+        <Route
+          path='/poems/Intense'
           element={currentUser ? <Poem /> : <Navigate replace to='/' />}
         />
+        <Route
+          path='/poems/17-years'
+          element={currentUser ? <Poem2 /> : <Navigate replace to='/' />}
+        ></Route>
         <Route path='/navbar' element={<Navbar />} />
       </Routes>
     </BrowserRouter>
