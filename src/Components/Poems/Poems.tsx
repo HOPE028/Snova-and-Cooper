@@ -17,6 +17,9 @@ const Poems: React.FC = () => {
         <Link to='/Poems/17-years'>
           <p className='poemBody'>17 Years</p>
         </Link>
+        <Link to='/Poems/Blip'>
+          <p className='poemBody'>A Blip</p>
+        </Link>
       </div>
     </>
   )
